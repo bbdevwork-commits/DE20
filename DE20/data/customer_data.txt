@@ -1,0 +1,11 @@
+customer_id~|~first_name~|~last_name~|~email~|~phone~|~address~|~city~|~state~|~zip_code~|~registration_date~|~account_status
+CUST000001~|~John~|~O'Brien~|~john.obrien@email.com~|~+1-555-123-4567~|~123 Main St, Apt #4~|~New York~|~NY~|~10001~|~2023-01-15 09:30:00~|~ACTIVE
+CUST000002~|~Maria~|~García-López~|~maria.garcia@email.com~|~+1-555-234-5678~|~456 Oak Avenue, Suite 200~|~Los Angeles~|~CA~|~90001~|~2023-02-20 14:45:00~|~ACTIVE
+CUST000003~|~Robert~|~Smith Jr.~|~robert.smith@email.com~|~+1-555-345-6789~|~789 Pine Road~|~Chicago~|~IL~|~60601~|~2023-03-10 11:00:00~|~INACTIVE
+CUST000004~|~Sarah~|~O'Connor~|~sarah.oconnor@email.com~|~+1-555-456-7890~|~321 Elm Street, Unit #12~|~Houston~|~TX~|~77001~|~2023-04-05 16:20:00~|~ACTIVE
+CUST000005~|~Michael~|~Chang~|~michael.chang@email.com~|~+1-555-567-8901~|~654 Maple Drive~|~Phoenix~|~AZ~|~85001~|~2023-05-18 08:15:00~|~PENDING
+CUST000006~|~Emily~|~Müller~|~emily.muller@email.com~|~+1-555-678-9012~|~987 Cedar Lane, Bldg A~|~Philadelphia~|~PA~|~19101~|~2023-06-22 13:30:00~|~ACTIVE
+CUST000007~|~David~|~Nakamura~|~david.nakamura@email.com~|~+1-555-789-0123~|~147 Birch Court~|~San Antonio~|~TX~|~78201~|~2023-07-30 10:45:00~|~ACTIVE
+CUST000008~|~Jennifer~|~MacDonald~|~jennifer.mac@email.com~|~+1-555-890-1234~|~258 Walnut Way, Floor 3~|~San Diego~|~CA~|~92101~|~2023-08-14 15:00:00~|~SUSPENDED
+CUST000009~|~William~|~St. Claire~|~william.stc@email.com~|~+1-555-901-2345~|~369 Spruce Street~|~Dallas~|~TX~|~75201~|~2023-09-08 09:00:00~|~ACTIVE
+CUST000010~|~Amanda~|~Van Der Berg~|~amanda.vdb@email.com~|~+1-555-012-3456~|~741 Willow Blvd, Ste 500~|~San Jose~|~CA~|~95101~|~2023-10-25 12:30:00~|~ACTIVE

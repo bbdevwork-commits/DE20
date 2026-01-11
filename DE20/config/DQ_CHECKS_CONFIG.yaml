@@ -2,29 +2,30 @@ dq_rules:
   - rule_name: "null_check"
     description: "Check for null values in required columns"
     columns:
-      - "transaction_id"
       - "customer_id"
-      - "amount"
+      - "first_name"
+      - "last_name"
+      - "email"
     threshold: 0.0
     action: "fail"
 
   - rule_name: "duplicate_check"
-    description: "Check for duplicate transaction IDs"
+    description: "Check for duplicate order IDs"
     columns:
-      - "transaction_id"
+      - "order_id"
     threshold: 0.0
     action: "fail"
 
   - rule_name: "range_check"
-    description: "Check amount is within valid range"
-    column: "amount"
+    description: "Check total_amount is within valid range"
+    column: "total_amount"
     min_value: 0.01
     max_value: 1000000.00
     action: "warn"
 
   - rule_name: "date_validity"
-    description: "Check transaction date is not in future"
-    column: "transaction_date"
+    description: "Check order date is not in future"
+    column: "order_date"
     condition: "value <= current_date"
     action: "fail"
 

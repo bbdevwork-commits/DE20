@@ -7,7 +7,7 @@ destinations:
       port: 5439
       database: "analytics"
       schema: "sales"
-      table: "transactions"
+      table: "customer_orders"
     write_mode: "append"
     batch_size: 5000
 
@@ -20,8 +20,8 @@ destinations:
       region: "us-east-1"
     file_format: "parquet"
     partition_by:
-      - "transaction_year"
-      - "transaction_month"
+      - "order_year"
+      - "order_month"
 
   - name: "real_time_dashboard"
     type: "kinesis"
@@ -32,13 +32,17 @@ destinations:
     batch_size: 100
 
 routing_rules:
-  - condition: "total_amount > 10000"
+  - condition: "grand_total > 500"
     destination: "data_warehouse"
     priority: 1
 
-  - condition: "all"
+  - condition: "order_status == 'DELIVERED'"
     destination: "data_lake_processed"
     priority: 2
+
+  - condition: "all"
+    destination: "data_lake_processed"
+    priority: 3
 
 settings:
   parallel_writes: true

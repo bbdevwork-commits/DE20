@@ -1,13 +1,99 @@
-source:
-  type: "s3 ============ INTESTE" 
-  bucket: "data-lake-raw"
-  path: "incoming/sales/"
-  file_format: "parquet"
+sources:
+  - name: "customer_data"
+    type: "local_file"
+    path: "/Users/bhavanamxavier/Applications/DE20/data/customer_data.txt"
+    file_format: "delimited"
+    delimiter: "~|~"
+    has_header: true
+    encoding: "UTF-8"
+    primary_key:
+      - "customer_id"
+    schema:
+      columns:
+        - name: "customer_id"
+          type: "string"
+          nullable: false
+        - name: "first_name"
+          type: "string"
+          nullable: false
+        - name: "last_name"
+          type: "string"
+          nullable: false
+        - name: "email"
+          type: "string"
+          nullable: false
+        - name: "phone"
+          type: "string"
+          nullable: true
+        - name: "address"
+          type: "string"
+          nullable: true
+        - name: "city"
+          type: "string"
+          nullable: true
+        - name: "state"
+          type: "string"
+          nullable: true
+        - name: "zip_code"
+          type: "string"
+          nullable: true
+        - name: "registration_date"
+          type: "timestamp"
+          nullable: false
+        - name: "account_status"
+          type: "string"
+          nullable: false
 
-connection:
-  region: "us-east-1"
-  access_key_env: "AWS_ACCESS_KEY"
-  secret_key_env: "AWS_SECRET_KEY"
+  - name: "order_data"
+    type: "local_file"
+    path: "/Users/bhavanamxavier/Applications/DE20/data/order_data.txt"
+    file_format: "delimited"
+    delimiter: "~|~"
+    has_header: true
+    encoding: "UTF-8"
+    primary_key:
+      - "order_id"
+    foreign_key:
+      - column: "customer_id"
+        references: "customer_data.customer_id"
+    schema:
+      columns:
+        - name: "order_id"
+          type: "string"
+          nullable: false
+        - name: "customer_id"
+          type: "string"
+          nullable: false
+        - name: "order_date"
+          type: "timestamp"
+          nullable: false
+        - name: "product_code"
+          type: "string"
+          nullable: false
+        - name: "product_name"
+          type: "string"
+          nullable: false
+        - name: "quantity"
+          type: "integer"
+          nullable: false
+        - name: "unit_price"
+          type: "decimal"
+          nullable: false
+        - name: "discount_percent"
+          type: "decimal"
+          nullable: true
+        - name: "total_amount"
+          type: "decimal"
+          nullable: false
+        - name: "payment_method"
+          type: "string"
+          nullable: false
+        - name: "shipping_address"
+          type: "string"
+          nullable: true
+        - name: "order_status"
+          type: "string"
+          nullable: false
 
 ingestion_settings:
   batch_size: 10000
@@ -15,20 +101,9 @@ ingestion_settings:
   retry_attempts: 3
   timeout_seconds: 300
 
-schema:
-  columns:
-    - name: "transaction_id"
-      type: "string"
-      nullable: false
-    - name: "customer_id"
-      type: "string"
-      nullable: false
-    - name: "amount"
-      type: "decimal"
-      nullable: false
-    - name: "transaction_date"
-      type: "timestamp"
-      nullable: false
-    - name: "product_code"
-      type: "string"
-      nullable: true
+relationships:
+  - name: "customer_orders"
+    parent: "customer_data"
+    child: "order_data"
+    join_key: "customer_id"
+    join_type: "left"

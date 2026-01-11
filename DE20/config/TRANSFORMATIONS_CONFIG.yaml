@@ -1,19 +1,19 @@
 transformations:
   - name: "standardize_dates"
     type: "date_format"
-    source_column: "transaction_date"
-    target_column: "transaction_date_formatted"
+    source_column: "order_date"
+    target_column: "order_date_formatted"
     format: "yyyy-MM-dd HH:mm:ss"
 
   - name: "calculate_tax"
     type: "derived_column"
-    expression: "amount * 0.08"
+    expression: "total_amount * 0.08"
     target_column: "tax_amount"
 
   - name: "total_with_tax"
     type: "derived_column"
-    expression: "amount + tax_amount"
-    target_column: "total_amount"
+    expression: "total_amount + tax_amount"
+    target_column: "grand_total"
 
   - name: "uppercase_product"
     type: "string_transform"
@@ -23,27 +23,27 @@ transformations:
 
   - name: "extract_year"
     type: "date_extract"
-    source_column: "transaction_date"
-    target_column: "transaction_year"
+    source_column: "order_date"
+    target_column: "order_year"
     extract: "year"
 
   - name: "extract_month"
     type: "date_extract"
-    source_column: "transaction_date"
-    target_column: "transaction_month"
+    source_column: "order_date"
+    target_column: "order_month"
     extract: "month"
 
 aggregations:
   - name: "daily_totals"
     group_by:
-      - "transaction_date_formatted"
+      - "order_date_formatted"
     metrics:
-      - column: "total_amount"
+      - column: "grand_total"
         function: "sum"
         alias: "daily_total"
-      - column: "transaction_id"
+      - column: "order_id"
         function: "count"
-        alias: "transaction_count"
+        alias: "order_count"
 
 settings:
   preserve_original: true

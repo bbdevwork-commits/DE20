@@ -1,0 +1,16 @@
+order_id~|~customer_id~|~order_date~|~product_code~|~product_name~|~quantity~|~unit_price~|~discount_percent~|~total_amount~|~payment_method~|~shipping_address~|~order_status
+ORD-2023-0001~|~CUST000001~|~2023-02-10 10:15:00~|~PROD-1001~|~Wireless Bluetooth Headphones~|~2~|~79.99~|~10~|~143.98~|~CREDIT_CARD~|~123 Main St, Apt #4, New York, NY~|~DELIVERED
+ORD-2023-0002~|~CUST000001~|~2023-03-22 14:30:00~|~PROD-2045~|~USB-C Charging Cable (6ft)~|~5~|~12.99~|~0~|~64.95~|~CREDIT_CARD~|~123 Main St, Apt #4, New York, NY~|~DELIVERED
+ORD-2023-0003~|~CUST000002~|~2023-03-15 09:45:00~|~PROD-3022~|~Stainless Steel Water Bottle~|~1~|~34.99~|~15~|~29.74~|~PAYPAL~|~456 Oak Avenue, Suite 200, Los Angeles, CA~|~DELIVERED
+ORD-2023-0004~|~CUST000003~|~2023-04-01 16:00:00~|~PROD-4010~|~Ergonomic Office Chair~|~1~|~299.99~|~20~|~239.99~|~CREDIT_CARD~|~789 Pine Road, Chicago, IL~|~CANCELLED
+ORD-2023-0005~|~CUST000004~|~2023-04-18 11:20:00~|~PROD-1001~|~Wireless Bluetooth Headphones~|~1~|~79.99~|~0~|~79.99~|~DEBIT_CARD~|~321 Elm Street, Unit #12, Houston, TX~|~DELIVERED
+ORD-2023-0006~|~CUST000005~|~2023-05-25 13:00:00~|~PROD-5055~|~Smart Watch Pro (Black)~|~1~|~249.99~|~5~|~237.49~|~CREDIT_CARD~|~654 Maple Drive, Phoenix, AZ~|~SHIPPED
+ORD-2023-0007~|~CUST000006~|~2023-06-30 08:30:00~|~PROD-6001~|~Laptop Stand - Aluminum~|~2~|~45.99~|~0~|~91.98~|~PAYPAL~|~987 Cedar Lane, Bldg A, Philadelphia, PA~|~DELIVERED
+ORD-2023-0008~|~CUST000007~|~2023-08-05 15:45:00~|~PROD-7088~|~Mechanical Keyboard (RGB)~|~1~|~129.99~|~10~|~116.99~|~CREDIT_CARD~|~147 Birch Court, San Antonio, TX~|~DELIVERED
+ORD-2023-0009~|~CUST000007~|~2023-08-20 10:00:00~|~PROD-8012~|~Wireless Gaming Mouse~|~1~|~69.99~|~0~|~69.99~|~DEBIT_CARD~|~147 Birch Court, San Antonio, TX~|~DELIVERED
+ORD-2023-0010~|~CUST000009~|~2023-09-12 12:15:00~|~PROD-9033~|~4K Monitor (27-inch)~|~1~|~399.99~|~25~|~299.99~|~CREDIT_CARD~|~369 Spruce Street, Dallas, TX~|~PROCESSING
+ORD-2023-0011~|~CUST000010~|~2023-10-28 09:30:00~|~PROD-2045~|~USB-C Charging Cable (6ft)~|~3~|~12.99~|~0~|~38.97~|~PAYPAL~|~741 Willow Blvd, Ste 500, San Jose, CA~|~SHIPPED
+ORD-2023-0012~|~CUST000002~|~2023-11-05 14:00:00~|~PROD-5055~|~Smart Watch Pro (Black)~|~1~|~249.99~|~15~|~212.49~|~CREDIT_CARD~|~456 Oak Avenue, Suite 200, Los Angeles, CA~|~PENDING
+ORD-2023-0013~|~CUST000004~|~2023-11-10 11:45:00~|~PROD-1022~|~Noise Cancelling Earbuds~|~2~|~159.99~|~10~|~287.98~|~DEBIT_CARD~|~321 Elm Street, Unit #12, Houston, TX~|~DELIVERED
+ORD-2023-0014~|~CUST000006~|~2023-11-15 16:30:00~|~PROD-3022~|~Stainless Steel Water Bottle~|~4~|~34.99~|~20~|~111.97~|~PAYPAL~|~987 Cedar Lane, Bldg A, Philadelphia, PA~|~SHIPPED
+ORD-2023-0015~|~CUST000001~|~2023-12-01 10:00:00~|~PROD-9033~|~4K Monitor (27-inch)~|~2~|~399.99~|~30~|~559.99~|~CREDIT_CARD~|~123 Main St, Apt #4, New York, NY~|~PENDING
