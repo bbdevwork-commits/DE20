@@ -1,0 +1,19 @@
+config_type: "CATALOG_FUNCTIONAL_CONFIG"
+catalog_id: 1001
+data_set_name: "TEST_DATASET"
+description: "TEST_DESCRIPTION"
+gear_id: "6446"
+
+execution_pipeline:
+  components:
+    - component_type: "INGESTOR"
+      config_file_name: "/Users/bhavanamxavier/Applications/DE20/config/INGESTER_CONFIG.yaml"
+    - component_type: "DQ-CHECKER"
+      config_file_name: "/Users/bhavanamxavier/Applications/DE20/config/DQ_CHECKS_CONFIG.yaml"
+    - component_type: "TRANSFORMER"
+      config_file_name: "/Users/bhavanamxavier/Applications/DE20/config/TRANSFORMATIONS_CONFIG.yaml"
+    - component_type: "ROUTER"
+      config_file_name: "/Users/bhavanamxavier/Applications/DE20/config/ROUTER_CONFIG.yaml"
+glue_job_configuration:
+  worker_type: "G.1X"
+  number_of_workers: 10

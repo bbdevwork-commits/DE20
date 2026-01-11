@@ -1,0 +1,48 @@
+destinations:
+  - name: "data_warehouse"
+    type: "redshift"
+    enabled: true
+    connection:
+      host: "dw-cluster.abc123.us-east-1.redshift.amazonaws.com"
+      port: 5439
+      database: "analytics"
+      schema: "sales"
+      table: "transactions"
+    write_mode: "append"
+    batch_size: 5000
+
+  - name: "data_lake_processed"
+    type: "s3"
+    enabled: true
+    connection:
+      bucket: "data-lake-processed"
+      path: "sales/daily/"
+      region: "us-east-1"
+    file_format: "parquet"
+    partition_by:
+      - "transaction_year"
+      - "transaction_month"
+
+  - name: "real_time_dashboard"
+    type: "kinesis"
+    enabled: false
+    connection:
+      stream_name: "sales-stream"
+      region: "us-east-1"
+    batch_size: 100
+
+routing_rules:
+  - condition: "total_amount > 10000"
+    destination: "data_warehouse"
+    priority: 1
+
+  - condition: "all"
+    destination: "data_lake_processed"
+    priority: 2
+
+settings:
+  parallel_writes: true
+  retry_on_failure: true
+  max_retries: 3
+  notification_on_complete: true
+  notification_email: "data-team@company.com"
